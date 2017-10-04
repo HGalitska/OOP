@@ -18,10 +18,10 @@ public class Client {
     }
 
     public Cat sendMessage(Cat message) {
-        String serializedCat;
+
         try {
-            output.writeObject(message);
-            Cat response = (Cat)input.readObject();
+            output.writeObject(message); //serializing object and sending it to server
+            Cat response = (Cat)input.readObject(); //receiving response object from server *must be the same*
             return response;
         }
         catch (IOException e) {

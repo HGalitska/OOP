@@ -10,13 +10,14 @@ public class Server {
 
     public void start(int port) {
         Cat message = null;
+
         try {
             serverSocket = new ServerSocket(port);
-            clientSocket = serverSocket.accept();
+            clientSocket = serverSocket.accept();   //waiting for client connection
             output = new ObjectOutputStream(clientSocket.getOutputStream());
             input = new ObjectInputStream(clientSocket.getInputStream());
-            message = (Cat)input.readObject();
-            output.writeObject(message);
+            message = (Cat)input.readObject(); //getting message from client (serialized object) and deserializing it
+            output.writeObject(message);  //writing deserialized object to server's output stream
         }
         catch (IOException e) {
             System.out.println(e);
@@ -40,6 +41,6 @@ public class Server {
 
     public static void main(String[] args) {
         Server server = new Server();
-        server.start(6666);
+        server.start(6666); //starting server on port
     }
 }
