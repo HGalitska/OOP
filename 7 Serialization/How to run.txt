@@ -1,0 +1,1 @@
+To run task 7: run ÒServerÓ class and then run ÒMainÓ class.
