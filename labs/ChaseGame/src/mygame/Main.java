@@ -2,15 +2,11 @@ package mygame;
 
 import com.jme3.app.SimpleApplication;
 import com.jme3.light.DirectionalLight;
-import com.jme3.material.Material;
 import com.jme3.math.ColorRGBA;
 import com.jme3.math.Quaternion;
 import com.jme3.math.Vector3f;
-import com.jme3.scene.Geometry;
-import com.jme3.scene.Mesh;
 import com.jme3.scene.Node;
 import com.jme3.scene.Spatial;
-import com.jme3.scene.VertexBuffer;
 
 public class Main extends SimpleApplication {
     Spatial ship; //main model of my game
@@ -68,14 +64,5 @@ public class Main extends SimpleApplication {
         q1.lookAt(shipPosition, Vector3f.UNIT_Y);
         fish.setLocalRotation(q1);
         fish.rotate(0, 0, 1f);
-        /*
-        Vector3f forwardFish = q1.mult(Vector3f.UNIT_Z);
-        fish.move(forwardFish.mult(tpf).mult(speed));
-        
-        
-        /*
-        Vector3f fishForward = q1.mult(Vector3f.UNIT_Z);
-        fish.move(fishForward.mult(tpf).mult(speed));
-        */
     }
 }
