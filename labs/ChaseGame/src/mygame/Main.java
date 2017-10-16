@@ -42,10 +42,9 @@ public class Main extends SimpleApplication {
         rootNode.attachChild(ship); //adding ship to the scene
         
         fish = assetManager.loadModel("Models/Models/fish/Models/fish.j3o"); //loading torpedo model
-        fish.setLocalTranslation(0f, 0f, 1f); //placing ship in the scene center
-        fish.rotate(0, 1.5f, 1.5f); //placing ship in the scene center
+        fish.setLocalTranslation(0f, 0f, -5f);
         fish.scale(0.5f);
-        rootNode.attachChild(fish); //adding ship to the scene
+        rootNode.attachChild(fish); //adding fish to the scene
         
         DirectionalLight dl = new DirectionalLight();
         dl.setDirection(new Vector3f(0, -1, 0));
@@ -59,9 +58,24 @@ public class Main extends SimpleApplication {
 
         Quaternion q = new Quaternion();
         q.lookAt(mousePos, Vector3f.UNIT_Y);
-        ship.setLocalRotation(q);
+        rootNode.setLocalRotation(q);
         Vector3f forward = q.mult(Vector3f.UNIT_Z);
-        ship.move(forward.mult(tpf).mult(speed));
-
+        rootNode.move(forward.mult(tpf).mult(speed));
+        
+       
+        Vector3f shipPosition = ship.getLocalTranslation();
+        Quaternion q1 = new Quaternion();
+        q1.lookAt(shipPosition, Vector3f.UNIT_Y);
+        fish.setLocalRotation(q1);
+        fish.rotate(0, 0, 1f);
+        /*
+        Vector3f forwardFish = q1.mult(Vector3f.UNIT_Z);
+        fish.move(forwardFish.mult(tpf).mult(speed));
+        
+        
+        /*
+        Vector3f fishForward = q1.mult(Vector3f.UNIT_Z);
+        fish.move(fishForward.mult(tpf).mult(speed));
+        */
     }
 }
