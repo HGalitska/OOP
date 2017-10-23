@@ -56,7 +56,7 @@ public class Main extends SimpleApplication {
         q.lookAt(mousePos, Vector3f.UNIT_Y);
         rootNode.setLocalRotation(q);
         Vector3f forward = q.mult(Vector3f.UNIT_Z);
-        rootNode.move(forward.mult(tpf).mult(speed));
+        rootNode.move(forward.mult(5*tpf).mult(speed));
         
        
         Vector3f shipPosition = ship.getLocalTranslation();
