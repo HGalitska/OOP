@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Candies>
+    <Candy>
+        <ID>1</ID>
+        <Type>Chocolate</Type>
+        <Name>Chocco Boom</Name>
+        <Energy>200</Energy>
+        <Ingredients>
+            <Water>100</Water>
+            <Sugar>50</Sugar>
+            <Fructose>20</Fructose>
+            <Vanillin>10</Vanillin>
+            <ChocolateType>Black</ChocolateType>
+        </Ingredients>
+        <Value>
+            <Protein>58</Protein>
+            <Fat>95</Fat>
+            <Carbohydrate>145</Carbohydrate>
+        </Value>
+        <Production>Roshen</Production>
+    </Candy>
+
+    <Candy>
+        <ID>2</ID>
+        <Type>Iris</Type>
+        <Name>Fantasy</Name>
+        <Energy>40</Energy>
+        <Ingredients>
+            <Water>120</Water>
+            <Sugar>20</Sugar>
+            <Fructose>10</Fructose>
+            <Vanillin>5</Vanillin>
+        </Ingredients>
+        <Value>
+            <Protein>40</Protein>
+            <Fat>70</Fat>
+            <Carbohydrate>123</Carbohydrate>
+        </Value>
+        <Production>AVK</Production>
+    </Candy>
+
+    <Candy>
+        <ID>3</ID>
+        <Type>Caramel</Type>
+        <Name>Carara</Name>
+        <Energy>300</Energy>
+        <Ingredients>
+            <Water>20</Water>
+            <Sugar>20</Sugar>
+        </Ingredients>
+        <Value>
+            <Protein>4</Protein>
+            <Fat>7</Fat>
+            <Carbohydrate>12</Carbohydrate>
+        </Value>
+        <Production>Conti</Production>
+    </Candy>
+</Candies>
