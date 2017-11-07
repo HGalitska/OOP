@@ -9,6 +9,8 @@ public class Candy implements Comparable<Candy>{
     public NutrValue Value;
     public String Production;
 
+    public Candy() {}
+
     public Candy(int id, String t, String n, int e, String prod, Recipe ingr, NutrValue value){
         this.ID = id;
         this.Type = t;

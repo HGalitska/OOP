@@ -10,7 +10,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import java.util.List;
 
-public class XMLHandler extends DefaultHandler {
+public class SAXHandler extends DefaultHandler {
     private List<Candy> candies; // container array, initialized in constructor
 
     // set of pairs for Candy object initialization
@@ -28,7 +28,7 @@ public class XMLHandler extends DefaultHandler {
     private Pair<Boolean, Integer> Fat = new Pair<>(false, 0);
     private Pair<Boolean, Integer> Carbohydrate = new Pair<>(false, 0);
 
-    XMLHandler(List<Candy> container){
+    SAXHandler(List<Candy> container){
         this.candies = container;
     }
 

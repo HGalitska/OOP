@@ -14,7 +14,7 @@ public class Main {
 
         XMLParser parser = new XMLParser();
         File f = new File("xml/candy.xml");
-        parser.parseXML(f);
+        parser.parseXML(f, "STAX");
 
         ToHTML.transformToHTML();
     }

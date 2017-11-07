@@ -10,10 +10,21 @@
         </xs:complexType>
     </xs:element>
 
+    <xs:attribute name="city">
+        <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+    </xs:attribute>
 
-    <xs:complexType name="candy">
+    <xs:complexType name= "candy">
         <xs:sequence>
-            <xs:element name="ID"/>
+            <xs:element name="ID">
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:pattern value="[0-9][0-9][0-9]"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
             <xs:element name="Type">
                 <xs:simpleType>
                         <xs:restriction base="xs:string">
@@ -45,7 +56,8 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="Production" type="xs:string" />
+            <xs:element name="Production" type="xs:string"/>
         </xs:sequence>
+        <xs:attribute name="delicious" type="xs:boolean"/>
     </xs:complexType>
 </xs:schema>

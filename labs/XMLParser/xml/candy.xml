@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Candies>
-    <Candy>
-        <ID>1</ID>
+    <Candy delicious="true">
+        <ID>735</ID>
         <Type>Chocolate</Type>
         <Name>Chocco Boom</Name>
         <Energy>200</Energy>
@@ -20,8 +20,8 @@
         <Production>Roshen</Production>
     </Candy>
 
-    <Candy>
-        <ID>2</ID>
+    <Candy delicious="false">
+        <ID>672</ID>
         <Type>Iris</Type>
         <Name>Fantasy</Name>
         <Energy>40</Energy>
@@ -39,8 +39,8 @@
         <Production>AVK</Production>
     </Candy>
 
-    <Candy>
-        <ID>3</ID>
+    <Candy delicious="true">
+        <ID>784</ID>
         <Type>Caramel</Type>
         <Name>Carara</Name>
         <Energy>300</Energy>
