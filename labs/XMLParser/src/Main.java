@@ -2,13 +2,14 @@ import org.xml.sax.SAXException;
 import xmlWork.*;
 
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.stream.XMLStreamException;
 import javax.xml.transform.TransformerException;
 import java.io.File;
 import java.io.IOException;
 
 public class Main {
 
-    public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException, TransformerException {
+    public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException, TransformerException, XMLStreamException {
         XMLValidator validator = new XMLValidator();
         validator.validateXML("xsd/candy.xsd", "xml/candy.xml");
 

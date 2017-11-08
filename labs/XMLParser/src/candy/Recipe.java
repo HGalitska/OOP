@@ -1,12 +1,13 @@
 package candy;
 
 public class Recipe{
-    private int water = 0;
-    private int sugar = 0;
-    private int fructose = 0;
-    private int vanillin = 0;
-    private String chocolate = "None";
+    public int water = 0;
+    public int sugar = 0;
+    public int fructose = 0;
+    public int vanillin = 0;
+    public String chocolate = "None";
 
+    public Recipe() {}
     public Recipe(int w, int s, int f, int v, String choc){
         this.water = w;
         this.sugar = s;

@@ -7,10 +7,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import javax.xml.parsers.*;
-import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.XMLStreamReader;
-import javax.xml.transform.stream.StreamSource;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
@@ -35,10 +32,8 @@ public class XMLParser {
             candies = DOMBuilder.getCandyList(root);
         }
         else if(parserName.equals("STAX")) {
-            XMLInputFactory factory = XMLInputFactory.newInstance();
-            XMLStreamReader reader = factory.createXMLStreamReader(new StreamSource("xml/candy.xml"));
-            STAXHandler handler = new STAXHandler(reader);
-            candies = handler.getCandyList();
+            STAXParser parser = new STAXParser("xml/candy.xml");
+            candies = parser.parse();
         }
 
         Comparator<Candy> comparator = new Sorter();

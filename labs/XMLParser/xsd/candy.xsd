@@ -10,12 +10,6 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:attribute name="city">
-        <xs:simpleType>
-            <xs:restriction base="xs:string"/>
-        </xs:simpleType>
-    </xs:attribute>
-
     <xs:complexType name= "candy">
         <xs:sequence>
             <xs:element name="ID">
@@ -30,7 +24,7 @@
                         <xs:restriction base="xs:string">
                             <xs:enumeration value="Caramel"/>
                             <xs:enumeration value="Iris"/>
-                            <xs:enumeration value="Chocolate"/>
+                            <xs:enumeration value="Chocolate" />
                         </xs:restriction>
                 </xs:simpleType>
             </xs:element>
@@ -45,6 +39,7 @@
                         <xs:element name="Vanillin" type="xs:int" minOccurs="0" />
                         <xs:element name="ChocolateType" type="xs:string" minOccurs="0" />
                     </xs:sequence>
+                    <xs:attribute name="fill" type="xs:string"/>
                 </xs:complexType>
             </xs:element>
             <xs:element name="Value">

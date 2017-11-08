@@ -5,7 +5,7 @@
         <Type>Chocolate</Type>
         <Name>Chocco Boom</Name>
         <Energy>200</Energy>
-        <Ingredients>
+        <Ingredients fill="strawberry">
             <Water>100</Water>
             <Sugar>50</Sugar>
             <Fructose>20</Fructose>

@@ -1,10 +1,11 @@
 package candy;
 
 public class NutrValue {
-    private int protein = 0;
-    private int fat = 0;
-    private int carbohydrate = 0;
+    public int protein = 0;
+    public int fat = 0;
+    public int carbohydrate = 0;
 
+    public NutrValue() {}
     public NutrValue(int p, int f, int c){
             this.protein = p;
             this.fat = f;
