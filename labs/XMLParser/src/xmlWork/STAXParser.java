@@ -2,11 +2,13 @@ package xmlWork;
 
 import candy.Candy;
 import candy.NutrValue;
-import candy.Recipe;
+import candy.recipes.*;
 
+import javax.xml.namespace.QName;
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.events.Attribute;
 import javax.xml.stream.events.EndElement;
 import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
@@ -14,6 +16,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 
 class STAXParser {
     private String file;
@@ -22,11 +25,12 @@ class STAXParser {
         file = xmlFile;
     }
 
-    public List<Candy> parse() throws XMLStreamException, FileNotFoundException {
+    List<Candy> parse() throws XMLStreamException, FileNotFoundException {
         List<Candy> candies = new ArrayList<>();
-        Candy candy = null;
-        Recipe ingredients = null;
-        NutrValue value = null;
+        Candy candy = new Candy();
+        Ingredient ingredient = new Ingredient();
+        Vector<Ingredient> ingredients = new Vector<>();
+        NutrValue value = new NutrValue();
         XMLInputFactory factory = XMLInputFactory.newInstance();
 
         XMLEventReader reader = factory.createXMLEventReader(new FileInputStream(file));
@@ -38,7 +42,6 @@ class STAXParser {
                 switch(startElement.getName().getLocalPart()) {
                     case "Candy":
                         candy = new Candy();
-                        ingredients = new Recipe();
                         value = new NutrValue();
                         break;
                     case "Name":
@@ -53,25 +56,21 @@ class STAXParser {
                         event = reader.nextEvent();
                         candy.ID = Integer.parseInt(event.asCharacters().getData());
                         break;
-                    case "Water":
+                    case "Energy":
                         event = reader.nextEvent();
-                        ingredients.water = Integer.parseInt(event.asCharacters().getData());
+                        candy.Energy = Integer.parseInt(event.asCharacters().getData());
                         break;
-                    case "Sugar":
+                    case "name":
                         event = reader.nextEvent();
-                        ingredients.sugar = Integer.parseInt(event.asCharacters().getData());
+                        Attribute fill = startElement.getAttributeByName(QName.valueOf("fillType"));
+                        Attribute choco = startElement.getAttributeByName(QName.valueOf("chocoType"));
+                        if (fill != null) ingredient.fillType = fill.getValue();
+                        if (choco != null) ingredient.chocoType = choco.getValue();
+                        ingredient.name = event.asCharacters().getData();
                         break;
-                    case "Fructose":
+                    case "quantity":
                         event = reader.nextEvent();
-                        ingredients.fructose = Integer.parseInt(event.asCharacters().getData());
-                        break;
-                    case "Vanillin":
-                        event = reader.nextEvent();
-                        ingredients.vanillin = Integer.parseInt(event.asCharacters().getData());
-                        break;
-                    case "ChocolateType":
-                        event = reader.nextEvent();
-                        ingredients.chocolate = event.asCharacters().getData();
+                        ingredient.quantity = Integer.parseInt(event.asCharacters().getData());
                         break;
                     case "Protein":
                         event = reader.nextEvent();
@@ -94,10 +93,32 @@ class STAXParser {
 
             if (event.isEndElement()) {
                 EndElement endElement = event.asEndElement();
-                if (endElement.getName().getLocalPart().equals("Candy")) {
-                    candy.Ingredients = ingredients;
+                if (endElement.getName().getLocalPart().equals("ingredient")){
+                    ingredients.add(ingredient);
+                    ingredient = new Ingredient();
+                }
+                else if (endElement.getName().getLocalPart().equals("Candy")) {
+                    Recipe recipe = null;
+                    switch(candy.Type){
+                        case "Caramel":
+                            recipe = new CaramelRecipe();
+                            break;
+                        case "Chocolate":
+                            recipe = new ChocoRecipe();
+                            break;
+                        case "ChocoFill":
+                            recipe = new ChocoFillRecipe();
+                            break;
+                        case "Iris":
+                            recipe = new IrisRecipe();
+                            break;
+                    }
+                    recipe.updateIngredients(ingredients);
+                    candy.recipe = recipe;
                     candy.Value = value;
                     candies.add(candy);
+
+                    ingredients.clear();
                 }
             }
         }

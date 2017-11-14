@@ -37,7 +37,7 @@ public class XMLParser {
         }
 
         Comparator<Candy> comparator = new Sorter();
-        Collections.sort(candies, comparator);
+        candies.sort(comparator);
 
         for(Candy item : candies){
             item.show();

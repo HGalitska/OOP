@@ -1,111 +1,127 @@
 package xmlWork;
 
 import candy.NutrValue;
-import candy.Recipe;
+import candy.recipes.*;
 import candy.Candy;
-import javafx.util.Pair;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import java.util.List;
+import java.util.Vector;
 
 public class SAXHandler extends DefaultHandler {
     private List<Candy> candies; // container array, initialized in constructor
+    private Vector<Ingredient> ingredientsVector = new Vector<>();
 
-    // set of pairs for Candy object initialization
-    private Pair<Boolean, Integer> ID = new Pair<>(false, 0);
-    private Pair<Boolean, String> Name = new Pair<>(false, "None");
-    private Pair<Boolean, String> Type = new Pair<>(false, "None");
-    private Pair<Boolean, Integer> Energy = new Pair<>(false, 0);
-    private Pair<Boolean, String> Prod = new Pair<>(false, "None");
-    private Pair<Boolean, Integer> Water = new Pair<>(false, 0);
-    private Pair<Boolean, Integer> Sugar = new Pair<>(false, 0);
-    private Pair<Boolean, Integer> Fructose = new Pair<>(false, 0);
-    private Pair<Boolean, Integer> Vanillin = new Pair<>(false, 0);
-    private Pair<Boolean, String> Choc = new Pair<>(false, "None");
-    private Pair<Boolean, Integer> Protein = new Pair<>(false, 0);
-    private Pair<Boolean, Integer> Fat = new Pair<>(false, 0);
-    private Pair<Boolean, Integer> Carbohydrate = new Pair<>(false, 0);
+    private Candy currentCandy = new Candy();
+    private Ingredient currentIngredient = new Ingredient();
+    private NutrValue currentValue = new NutrValue();
+
+    private boolean id = false;
+    private boolean type = false;
+    private boolean name = false;
+    private boolean energy = false;
+    private boolean ingredName = false;
+    private boolean ingredQuantity = false;
+    private boolean protein = false;
+    private boolean fat = false;
+    private boolean carbohydrate = false;
+    private boolean production = false;
 
     SAXHandler(List<Candy> container){
         this.candies = container;
     }
 
     private void reset(){
-        ID = new Pair<>(false, 0);
-        Name = new Pair<>(false, "None");
-        Type = new Pair<>(false, "None");
-        Energy = new Pair<>(false, 0);
-        Prod = new Pair<>(false, "None");
-        Water = new Pair<>(false, 0);
-        Sugar = new Pair<>(false, 0);
-        Fructose = new Pair<>(false, 0);
-        Vanillin = new Pair<>(false, 0);
-        Choc = new Pair<>(false, "None");
-        Protein = new Pair<>(false, 0);
-        Fat = new Pair<>(false, 0);
-        Carbohydrate = new Pair<>(false, 0);
+        id = false;
+        type = false;
+        name = false;
+        energy = false;
+        ingredName = false;
+        ingredQuantity = false;
+        protein = false;
+        fat = false;
+        carbohydrate = false;
+        production = false;
+
     }
 
     //listener for start elements in xml file
     public void startElement(String uri, String localName, String qName,
                              Attributes attributes) throws SAXException {
-        if (qName.equalsIgnoreCase("ID")) {
-            ID  = new Pair<>(true, ID.getValue());
+        if (qName.equalsIgnoreCase("Candy")) {
+            currentCandy = new Candy();
+            ingredientsVector.clear();
+            currentValue = new NutrValue();
         }
-        else if (qName.equalsIgnoreCase("NAME")) {
-            Name  = new Pair<>(true, Name.getValue());  // every time specific element
-                                                        // is encountered, set its key to "true"
+
+        if (qName.equalsIgnoreCase("ID")) {
+            id  = true;
+        }
+        else if (qName.equals("Name")) {
+            name = true;
         }
         else if (qName.equalsIgnoreCase("TYPE")) {
-            Type  = new Pair<>(true, Type.getValue());
+            type = true;
         }
         else if (qName.equalsIgnoreCase("ENERGY")) {
-            Energy  = new Pair<>(true, Energy.getValue());
+            energy = true;
         }
-        else if (qName.equalsIgnoreCase("PRODUCTION")) {
-            Prod  = new Pair<>(true, Prod.getValue());
+        else if (qName.equals("ingredient")){
+            currentIngredient = new Ingredient();
         }
-        else if (qName.equalsIgnoreCase("WATER")) {
-            Prod  = new Pair<>(true, Prod.getValue());
+        else if (qName.equals("name")) {
+            ingredName = true;
+            currentIngredient.fillType = attributes.getValue("fillType");
+            currentIngredient.chocoType = attributes.getValue("chocoType");
         }
-        else if (qName.equalsIgnoreCase("SUGAR")) {
-            Sugar  = new Pair<>(true, Sugar.getValue());
-        }
-        else if (qName.equalsIgnoreCase("FRUCTOSE")) {
-            Fructose  = new Pair<>(true, Fructose.getValue());
-        }
-        else if (qName.equalsIgnoreCase("VANILLIN")) {
-            Vanillin  = new Pair<>(true, Vanillin.getValue());
-        }
-        else if (qName.equalsIgnoreCase("CHOCOLATETYPE")) {
-            Choc  = new Pair<>(true, Choc.getValue());
+        else if (qName.equalsIgnoreCase("QUANTITY")) {
+            ingredQuantity = true;
         }
         else if (qName.equalsIgnoreCase("PROTEIN")) {
-            Protein  = new Pair<>(true, Protein.getValue());
+            protein = true;
         }
         else if (qName.equalsIgnoreCase("FAT")) {
-            Fat  = new Pair<>(true, Fat.getValue());
+            fat = true;
         }
         else if (qName.equalsIgnoreCase("CARBOHYDRATE")) {
-            Carbohydrate  = new Pair<>(true, Carbohydrate.getValue());
+            carbohydrate = true;
+        }
+        else if (qName.equalsIgnoreCase("PRODUCTION")) {
+            production  = true;
         }
     }
 
     public void endElement(String uri, String localName,
                            String qName) throws SAXException {
-        if(qName.equals("Candy")){          // if closing </Candy> element is encountered
-            Recipe ingredients = new Recipe(Water.getValue(), Sugar.getValue(),
-                                                        Fructose.getValue(), Vanillin.getValue(), Choc.getValue());
-            NutrValue value = new NutrValue(Protein.getValue(), Fat.getValue(),
-                                                Carbohydrate.getValue());
+        if(qName.equals("ingredient")){
+            ingredientsVector.add(currentIngredient);
+        }
 
-            // create a new candy with all encountered fields
-            Candy myCandy = new Candy(ID.getValue(), Type.getValue(), Name.getValue(),
-                                        Energy.getValue(), Prod.getValue(), ingredients, value);
+        if(qName.equals("Candy")){          // if closing </Candy> element is encountered
+            Recipe recipe = null;
+            switch (currentCandy.Type){
+                case "Caramel":
+                    recipe = new CaramelRecipe();
+                    break;
+                case "Iris":
+                    recipe = new IrisRecipe();
+                    break;
+                case "Chocolate":
+                    recipe = new ChocoRecipe();
+                    break;
+                case "ChocoFill":
+                    recipe = new ChocoFillRecipe();
+                    break;
+
+            }
+            recipe.updateIngredients(ingredientsVector);
+            currentCandy.recipe = recipe;
+            currentCandy.Value = currentValue;
+
             // add new candy to candy list
-            this.candies.add(myCandy);
+            this.candies.add(currentCandy);
 
             reset(); //reset all candy properties to initial values
         }
@@ -114,45 +130,47 @@ public class SAXHandler extends DefaultHandler {
 
     public void characters(char ch[], int start, int length) throws SAXException {
 
-        if (ID.getKey()) {
-            ID = new Pair<>(false, new Integer(new String(ch, start, length)));
+        if (id) {
+            currentCandy.ID = Integer.parseInt(new String(ch, start, length));
+            id = false;
         }
-        if (Name.getKey()) { //if certain element is encountered, save its value to later initialize Candy fields
-            Name = new Pair<>(false, new String(ch, start, length));
+        else if (type) {
+            currentCandy.Type = new String(ch, start, length);
+            type = false;
         }
-        if (Type.getKey()) {
-            Type = new Pair<>(false, new String(ch, start, length));
+        else if (name) {
+            currentCandy.Name = new String(ch, start, length);
+            name = false;
         }
-        if (Energy.getKey()) {
-            Energy = new Pair<>(false, new Integer(new String(ch, start, length)));
+        else if (energy) {
+            currentCandy.Energy = Integer.parseInt(new String(ch, start, length));
+            energy = false;
         }
-        if (Prod.getKey()) {
-            Prod = new Pair<>(false, new String(ch, start, length));
+        else if (ingredName) {
+            currentIngredient.name = new String(ch, start, length);
+            ingredName = false;
         }
-        if (Sugar.getKey()) {
-            Sugar = new Pair<>(false, new Integer(new String(ch, start, length)));
+        else if (ingredQuantity) {
+            currentIngredient.quantity = Integer.parseInt(new String(ch, start, length));
+            ingredQuantity = false;
         }
-        if (Fructose.getKey()) {
-            Fructose = new Pair<>(false, new Integer(new String(ch, start, length)));
+        else if (protein) {
+            currentValue.protein = Integer.parseInt(new String(ch, start, length));
+            protein = false;
         }
-        if (Water.getKey()) {
-            Water = new Pair<>(false, new Integer(new String(ch, start, length)));
+        else if (fat) {
+            currentValue.fat = Integer.parseInt(new String(ch, start, length));
+            fat = false;
         }
-        if (Vanillin.getKey()) {
-            Vanillin = new Pair<>(false, new Integer(new String(ch, start, length)));
+        else if (carbohydrate) {
+            currentValue.carbohydrate = Integer.parseInt(new String(ch, start, length));
+            carbohydrate = false;
         }
-        if (Choc.getKey()) {
-            Choc = new Pair<>(false, new String(ch, start, length));
+        else if (production) {
+            currentCandy.Production = new String(ch, start, length);
+            production = false;
         }
-        if (Protein.getKey()) {
-            Protein = new Pair<>(false, new Integer(new String(ch, start, length)));
-        }
-        if (Fat.getKey()) {
-            Fat = new Pair<>(false, new Integer(new String(ch, start, length)));
-        }
-        if (Carbohydrate.getKey()) {
-            Carbohydrate = new Pair<>(false, new Integer(new String(ch, start, length)));
-        }
+
 
     }
 }

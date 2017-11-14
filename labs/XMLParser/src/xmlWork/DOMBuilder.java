@@ -2,12 +2,13 @@ package xmlWork;
 
 import candy.Candy;
 import candy.NutrValue;
-import candy.Recipe;
+import candy.recipes.*;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import java.util.ArrayList;
+import java.util.Vector;
 
 class DOMBuilder {
     static ArrayList<Candy> getCandyList(Element root) {
@@ -25,16 +26,42 @@ class DOMBuilder {
             candy.Type = childValue(candyElem, "Type");
             candy.Energy = new Integer(childValue(candyElem, "Energy"));
 
-            int water = new Integer(childValue(candyElem, "Water"));
-            int sugar = new Integer(childValue(candyElem, "Sugar"));
-            int fruct = new Integer(childValue(candyElem, "Fructose"));
-            int vanil = new Integer(childValue(candyElem, "Vanillin"));
-            String choco = childValue(candyElem, "ChocolateType");
-            candy.Ingredients = new Recipe(water, sugar, fruct, vanil, choco);
+            NodeList ingredientsNodes = children(candyElem, "ingredient");
+            Vector<Ingredient> ingredients = new Vector<>();
+
+            for (int ingr = 0; ingr < ingredientsNodes.getLength(); ingr++){
+                Ingredient currIngredient = new Ingredient();
+                Element ingrElem = (Element) ingredientsNodes.item(ingr);
+
+                currIngredient.name = childValue(ingrElem, "name");
+                currIngredient.quantity = new Integer(childValue(ingrElem, "quantity"));
+                currIngredient.chocoType = (child(ingrElem, "name")).getAttribute("chocoType");
+
+                currIngredient.fillType = (child(ingrElem, "name")).getAttribute("fillType");
+
+                ingredients.add(currIngredient);
+            }
+
+            Recipe recipe = new CaramelRecipe();
+            switch(candy.Type){
+                case "Iris":
+                    recipe = new IrisRecipe();
+                    break;
+                case "Chocolate":
+                    recipe = new ChocoRecipe();
+                    break;
+                case "ChocoFill":
+                    recipe = new ChocoFillRecipe();
+                    break;
+            }
+
+            recipe.updateIngredients(ingredients);
+            candy.recipe = recipe;
 
             int prot = new Integer(childValue(candyElem, "Protein"));
             int fat = new Integer(childValue(candyElem, "Fat"));
             int carb = new Integer(childValue(candyElem, "Carbohydrate"));
+
             candy.Value = new NutrValue(prot, fat, carb);
             candy.Production = childValue(candyElem, "Production");
 

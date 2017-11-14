@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Candies>
-    <Candy delicious="true">
+    <Candy>
         <ID>735</ID>
         <Type>Chocolate</Type>
         <Name>Chocco Boom</Name>
         <Energy>200</Energy>
-        <Ingredients fill="strawberry">
-            <Water>100</Water>
-            <Sugar>50</Sugar>
-            <Fructose>20</Fructose>
-            <Vanillin>10</Vanillin>
-            <ChocolateType>Black</ChocolateType>
+        <Ingredients>
+            <ingredient>
+                <name>Water</name>
+                <quantity>100</quantity>
+            </ingredient>
+            <ingredient>
+                <name>Sugar</name>
+                <quantity>50</quantity>
+            </ingredient>
+            <ingredient>
+                <name chocoType = "Black">Chocolate</name>
+                <quantity>150</quantity>
+            </ingredient>
         </Ingredients>
         <Value>
             <Protein>58</Protein>
@@ -20,16 +27,24 @@
         <Production>Roshen</Production>
     </Candy>
 
-    <Candy delicious="false">
+    <Candy>
         <ID>672</ID>
         <Type>Iris</Type>
         <Name>Fantasy</Name>
         <Energy>40</Energy>
         <Ingredients>
-            <Water>120</Water>
-            <Sugar>20</Sugar>
-            <Fructose>10</Fructose>
-            <Vanillin>5</Vanillin>
+            <ingredient>
+                <name>Water</name>
+                <quantity>130</quantity>
+            </ingredient>
+            <ingredient>
+                <name>Fructose</name>
+                <quantity>70</quantity>
+            </ingredient>
+            <ingredient>
+                <name>Vanillin</name>
+                <quantity>20</quantity>
+            </ingredient>
         </Ingredients>
         <Value>
             <Protein>40</Protein>
@@ -39,14 +54,24 @@
         <Production>AVK</Production>
     </Candy>
 
-    <Candy delicious="true">
+    <Candy>
         <ID>784</ID>
         <Type>Caramel</Type>
         <Name>Carara</Name>
         <Energy>300</Energy>
         <Ingredients>
-            <Water>20</Water>
-            <Sugar>20</Sugar>
+            <ingredient>
+                <name>Water</name>
+                <quantity>150</quantity>
+            </ingredient>
+            <ingredient>
+                <name>Sugar</name>
+                <quantity>100</quantity>
+            </ingredient>
+            <ingredient>
+                <name>Vanillin</name>
+                <quantity>35</quantity>
+            </ingredient>
         </Ingredients>
         <Value>
             <Protein>4</Protein>
@@ -54,5 +79,36 @@
             <Carbohydrate>12</Carbohydrate>
         </Value>
         <Production>Conti</Production>
+    </Candy>
+
+    <Candy>
+        <ID>321</ID>
+        <Type>ChocoFill</Type>
+        <Name>Boost</Name>
+        <Energy>500</Energy>
+        <Ingredients>
+            <ingredient>
+                <name>Water</name>
+                <quantity>100</quantity>
+            </ingredient>
+            <ingredient>
+                <name>Sugar</name>
+                <quantity>50</quantity>
+            </ingredient>
+            <ingredient>
+                <name chocoType = "Milk">Chocolate</name>
+                <quantity>150</quantity>
+            </ingredient>
+            <ingredient>
+                <name fillType = "Nuts">Fill</name>
+                <quantity>50</quantity>
+            </ingredient>
+        </Ingredients>
+        <Value>
+            <Protein>10</Protein>
+            <Fat>12</Fat>
+            <Carbohydrate>4</Carbohydrate>
+        </Value>
+        <Production>Roshen</Production>
     </Candy>
 </Candies>
