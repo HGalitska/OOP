@@ -16,6 +16,8 @@ class DOMBuilder {
         NodeList candyNodes = children(root, "Candy");
         Candy candy;
 
+        NodeList ingredientsNodes;
+
         for (int i = 0; i < candyNodes.getLength(); i++) {
             candy = new Candy();
 
@@ -26,33 +28,39 @@ class DOMBuilder {
             candy.Type = childValue(candyElem, "Type");
             candy.Energy = new Integer(childValue(candyElem, "Energy"));
 
-            NodeList ingredientsNodes = children(candyElem, "ingredient");
-            Vector<Ingredient> ingredients = new Vector<>();
+            Node recipeNode = child(candyElem, "ChocolateCandy");
+            Recipe recipe = new ChocoRecipe();
 
-            for (int ingr = 0; ingr < ingredientsNodes.getLength(); ingr++){
-                Ingredient currIngredient = new Ingredient();
-                Element ingrElem = (Element) ingredientsNodes.item(ingr);
-
-                currIngredient.name = childValue(ingrElem, "name");
-                currIngredient.quantity = new Integer(childValue(ingrElem, "quantity"));
-                currIngredient.chocoType = (child(ingrElem, "name")).getAttribute("chocoType");
-
-                currIngredient.fillType = (child(ingrElem, "name")).getAttribute("fillType");
-
-                ingredients.add(currIngredient);
-            }
-
-            Recipe recipe = new CaramelRecipe();
-            switch(candy.Type){
+            switch (candy.Type) {
                 case "Iris":
+                    recipeNode = child(candyElem, "IrisCandy");
                     recipe = new IrisRecipe();
                     break;
-                case "Chocolate":
-                    recipe = new ChocoRecipe();
+                case "Caramel":
+                    recipeNode = child(candyElem, "CaramelCandy");
+                    recipe = new CaramelRecipe();
                     break;
                 case "ChocoFill":
+                    recipeNode = child(candyElem, "ChocoFillCandy");
                     recipe = new ChocoFillRecipe();
-                    break;
+            }
+
+            Vector<Ingredient> ingredients = new Vector<>();
+            ingredientsNodes = recipeNode.getChildNodes();
+
+            for (int ingr = 0; ingr < ingredientsNodes.getLength(); ingr++) {
+                if (ingredientsNodes.item(ingr).getNodeType() == Node.ELEMENT_NODE) {
+                    Element ingrElem = (Element) ingredientsNodes.item(ingr);
+                    Ingredient currIngredient = new Ingredient();
+
+                    currIngredient.name = ingrElem.getTagName();
+                    currIngredient.quantity = new Integer(ingrElem.getTextContent());
+
+                    currIngredient.chocoType = ingrElem.getAttribute("chocoType");
+                    currIngredient.fillType = ingrElem.getAttribute("fillType");
+
+                    ingredients.add(currIngredient);
+                }
             }
 
             recipe.updateIngredients(ingredients);
@@ -72,7 +80,7 @@ class DOMBuilder {
 
     private static Element child(Element parent, String childName) {
         NodeList list = parent.getElementsByTagName(childName);
-        return  (Element)list.item(0);
+        return (Element) list.item(0);
     }
 
     private static NodeList children(Element parent, String childName) {
@@ -81,7 +89,7 @@ class DOMBuilder {
 
     private static String childValue(Element parent, String childName) {
         Element child = child(parent, childName);
-        if (child == null){
+        if (child == null) {
             return "-1";
         }
         Node node = child.getFirstChild();

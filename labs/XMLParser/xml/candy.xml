@@ -5,20 +5,14 @@
         <Type>Chocolate</Type>
         <Name>Chocco Boom</Name>
         <Energy>200</Energy>
-        <Ingredients>
-            <ingredient>
-                <name>Water</name>
-                <quantity>100</quantity>
-            </ingredient>
-            <ingredient>
-                <name>Sugar</name>
-                <quantity>50</quantity>
-            </ingredient>
-            <ingredient>
-                <name chocoType = "Black">Chocolate</name>
-                <quantity>150</quantity>
-            </ingredient>
-        </Ingredients>
+
+        <Recipe>
+            <ChocolateCandy>
+                <water>100</water>
+                <sugar>50</sugar>
+                <chocolate chocoType="Black">150</chocolate>
+            </ChocolateCandy>
+        </Recipe>
         <Value>
             <Protein>58</Protein>
             <Fat>95</Fat>
@@ -32,20 +26,13 @@
         <Type>Iris</Type>
         <Name>Fantasy</Name>
         <Energy>40</Energy>
-        <Ingredients>
-            <ingredient>
-                <name>Water</name>
-                <quantity>130</quantity>
-            </ingredient>
-            <ingredient>
-                <name>Fructose</name>
-                <quantity>70</quantity>
-            </ingredient>
-            <ingredient>
-                <name>Vanillin</name>
-                <quantity>20</quantity>
-            </ingredient>
-        </Ingredients>
+        <Recipe>
+            <IrisCandy>
+                <water>130</water>
+                <fructose>70</fructose>
+                <vanillin>20</vanillin>
+            </IrisCandy>
+        </Recipe>
         <Value>
             <Protein>40</Protein>
             <Fat>70</Fat>
@@ -59,20 +46,13 @@
         <Type>Caramel</Type>
         <Name>Carara</Name>
         <Energy>300</Energy>
-        <Ingredients>
-            <ingredient>
-                <name>Water</name>
-                <quantity>150</quantity>
-            </ingredient>
-            <ingredient>
-                <name>Sugar</name>
-                <quantity>100</quantity>
-            </ingredient>
-            <ingredient>
-                <name>Vanillin</name>
-                <quantity>35</quantity>
-            </ingredient>
-        </Ingredients>
+        <Recipe>
+            <CaramelCandy>
+                <water>150</water>
+                <sugar>100</sugar>
+                <vanillin>35</vanillin>
+            </CaramelCandy>
+        </Recipe>
         <Value>
             <Protein>4</Protein>
             <Fat>7</Fat>
@@ -86,24 +66,14 @@
         <Type>ChocoFill</Type>
         <Name>Boost</Name>
         <Energy>500</Energy>
-        <Ingredients>
-            <ingredient>
-                <name>Water</name>
-                <quantity>100</quantity>
-            </ingredient>
-            <ingredient>
-                <name>Sugar</name>
-                <quantity>50</quantity>
-            </ingredient>
-            <ingredient>
-                <name chocoType = "Milk">Chocolate</name>
-                <quantity>150</quantity>
-            </ingredient>
-            <ingredient>
-                <name fillType = "Nuts">Fill</name>
-                <quantity>50</quantity>
-            </ingredient>
-        </Ingredients>
+        <Recipe>
+            <ChocoFillCandy>
+                <water>100</water>
+                <sugar>50</sugar>
+                <chocolate chocoType="Milk">150</chocolate>
+                <fill fillType="Nuts">50</fill>
+            </ChocoFillCandy>
+        </Recipe>
         <Value>
             <Protein>10</Protein>
             <Fat>12</Fat>

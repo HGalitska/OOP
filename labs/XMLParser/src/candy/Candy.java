@@ -2,7 +2,7 @@ package candy;
 
 import candy.recipes.Recipe;
 
-public class Candy implements Comparable<Candy>{
+public class Candy implements Comparable<Candy> {
     public int ID;
     public String Type;
     public String Name;
@@ -11,9 +11,10 @@ public class Candy implements Comparable<Candy>{
     public NutrValue Value;
     public String Production;
 
-    public Candy() {}
+    public Candy() {
+    }
 
-    public Candy(int id, String t, String n, int e, Recipe r, NutrValue v,  String p){
+    public Candy(int id, String t, String n, int e, Recipe r, NutrValue v, String p) {
         this.ID = id;
         this.Type = t;
         this.Name = n;
@@ -31,7 +32,7 @@ public class Candy implements Comparable<Candy>{
     }
 
     // method to display all the information about candy
-    public void show(){
+    public void show() {
         System.out.println("ID: " + ID);
         System.out.println("Type: " + Type);
         System.out.println("Name: " + Name);

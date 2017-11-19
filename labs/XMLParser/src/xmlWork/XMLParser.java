@@ -1,6 +1,8 @@
 package xmlWork;
 
 import candy.Candy;
+import candy.CandyList;
+import com.thoughtworks.xstream.XStream;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
@@ -43,5 +45,15 @@ public class XMLParser {
             item.show();
             System.out.println("\n");
         }
+
+        XStream xstream = new XStream();
+        xstream.alias("Candy", Candy.class);
+        xstream.alias("Candies", CandyList.class);
+        xstream.addImplicitCollection(CandyList.class, "list");
+
+        CandyList cands = new CandyList(candies);
+
+        String xml = xstream.toXML(cands);
+        System.out.println(xml);
     }
 }

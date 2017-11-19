@@ -18,7 +18,7 @@ import java.io.IOException;
 
 public class XMLValidator {
     public boolean validateXML(String xsdFile, String xmlFile)
-                                throws IOException, SAXException, ParserConfigurationException {
+            throws IOException, SAXException, ParserConfigurationException {
         SAXParserFactory factory = SAXParserFactory.newInstance();
 
         SchemaFactory schemaFactory = SchemaFactory.newInstance("http://www.w3.org/2001/XMLSchema");

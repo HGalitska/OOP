@@ -19,15 +19,15 @@ public class ChocoRecipe implements Recipe {
     public void updateIngredients(Vector<Ingredient> ingredients) {
         if (ingredients.size() != 3) System.out.println("Bad ingredients for chocolate candy.");
 
-        for (Ingredient i: ingredients) {
+        for (Ingredient i : ingredients) {
             switch (i.name) {
-                case "Water":
+                case "water":
                     this.water = i;
                     break;
-                case "Sugar":
+                case "sugar":
                     this.sugar = i;
                     break;
-                case "Chocolate":
+                case "chocolate":
                     this.chocolate = i;
                     break;
                 default:

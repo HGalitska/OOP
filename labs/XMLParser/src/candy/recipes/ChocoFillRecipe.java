@@ -21,18 +21,18 @@ public class ChocoFillRecipe implements Recipe {
     public void updateIngredients(Vector<Ingredient> ingredients) {
         if (ingredients.size() != 4) System.out.println("Bad ingredients for chocolate candy with fill.");
 
-        for (Ingredient i: ingredients) {
+        for (Ingredient i : ingredients) {
             switch (i.name) {
-                case "Water":
+                case "water":
                     this.water = i;
                     break;
-                case "Sugar":
+                case "sugar":
                     this.sugar = i;
                     break;
-                case "Chocolate":
+                case "chocolate":
                     this.chocolate = i;
                     break;
-                case "Fill":
+                case "fill":
                     this.fill = i;
                     break;
                 default:

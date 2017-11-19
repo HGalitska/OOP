@@ -21,13 +21,13 @@ public class IrisRecipe implements Recipe {
 
         for (Ingredient i: ingredients) {
             switch (i.name) {
-                case "Water":
+                case "water":
                     this.water = i;
                     break;
-                case "Fructose":
+                case "fructose":
                     this.fructose = i;
                     break;
-                case "Vanillin":
+                case "vanillin":
                     this.vanillin = i;
                     break;
                 default:

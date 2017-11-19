@@ -17,32 +17,47 @@ public class SAXHandler extends DefaultHandler {
     private Candy currentCandy = new Candy();
     private Ingredient currentIngredient = new Ingredient();
     private NutrValue currentValue = new NutrValue();
+    private String currentRecipe;
 
     private boolean id = false;
     private boolean type = false;
     private boolean name = false;
     private boolean energy = false;
-    private boolean ingredName = false;
-    private boolean ingredQuantity = false;
+
+    private boolean water = false;
+    private boolean sugar = false;
+    private boolean fructose = false;
+    private boolean chocolate = false;
+    private boolean fill = false;
+    private boolean vanillin = false;
+
     private boolean protein = false;
     private boolean fat = false;
     private boolean carbohydrate = false;
+
     private boolean production = false;
 
-    SAXHandler(List<Candy> container){
+    SAXHandler(List<Candy> container) {
         this.candies = container;
     }
 
-    private void reset(){
+    private void reset() {
         id = false;
         type = false;
         name = false;
         energy = false;
-        ingredName = false;
-        ingredQuantity = false;
+
+        water = false;
+        sugar = false;
+        fructose = false;
+        chocolate = false;
+        fill = false;
+        vanillin = false;
+
         protein = false;
         fat = false;
         carbohydrate = false;
+
         production = false;
 
     }
@@ -52,56 +67,93 @@ public class SAXHandler extends DefaultHandler {
                              Attributes attributes) throws SAXException {
         if (qName.equalsIgnoreCase("Candy")) {
             currentCandy = new Candy();
-            ingredientsVector.clear();
             currentValue = new NutrValue();
+            currentIngredient = new Ingredient();
+            currentRecipe = "";
+
+            ingredientsVector.clear();
+            reset();
         }
 
         if (qName.equalsIgnoreCase("ID")) {
-            id  = true;
-        }
-        else if (qName.equals("Name")) {
+            id = true;
+        } else if (qName.equalsIgnoreCase("NAME")) {
             name = true;
-        }
-        else if (qName.equalsIgnoreCase("TYPE")) {
+        } else if (qName.equalsIgnoreCase("TYPE")) {
             type = true;
-        }
-        else if (qName.equalsIgnoreCase("ENERGY")) {
+        } else if (qName.equalsIgnoreCase("ENERGY")) {
             energy = true;
         }
-        else if (qName.equals("ingredient")){
-            currentIngredient = new Ingredient();
+
+        else if (qName.equalsIgnoreCase("CARAMELCANDY")) {
+            currentRecipe = "Caramel";
+        } else if (qName.equalsIgnoreCase("IRISCANDY")) {
+            currentRecipe = "Iris";
+        } else if (qName.equalsIgnoreCase("CHOCOLATECANDY")) {
+            currentRecipe = "Chocolate";
+        } else if (qName.equalsIgnoreCase("CHOCOFILLCANDY")) {
+            currentRecipe = "ChocoFill";
         }
-        else if (qName.equals("name")) {
-            ingredName = true;
+
+        else if (qName.equalsIgnoreCase("WATER")) {
+            water = true;
+        } else if (qName.equalsIgnoreCase("SUGAR")) {
+            sugar = true;
+        } else if (qName.equalsIgnoreCase("FRUCTOSE")) {
+            fructose = true;
+        } else if (qName.equalsIgnoreCase("CHOCOLATE")) {
+            chocolate = true;
+            currentIngredient.fillType = attributes.getValue("chocoType");
+        } else if (qName.equalsIgnoreCase("FILL")) {
+            fill = true;
             currentIngredient.fillType = attributes.getValue("fillType");
-            currentIngredient.chocoType = attributes.getValue("chocoType");
+        } else if (qName.equalsIgnoreCase("VANILLIN")) {
+            vanillin = true;
         }
-        else if (qName.equalsIgnoreCase("QUANTITY")) {
-            ingredQuantity = true;
-        }
+
         else if (qName.equalsIgnoreCase("PROTEIN")) {
             protein = true;
-        }
-        else if (qName.equalsIgnoreCase("FAT")) {
+        } else if (qName.equalsIgnoreCase("FAT")) {
             fat = true;
-        }
-        else if (qName.equalsIgnoreCase("CARBOHYDRATE")) {
+        } else if (qName.equalsIgnoreCase("CARBOHYDRATE")) {
             carbohydrate = true;
         }
+
         else if (qName.equalsIgnoreCase("PRODUCTION")) {
-            production  = true;
+            production = true;
         }
     }
 
     public void endElement(String uri, String localName,
                            String qName) throws SAXException {
-        if(qName.equals("ingredient")){
+        if (qName.equalsIgnoreCase("water")) {
             ingredientsVector.add(currentIngredient);
+            currentIngredient = new Ingredient();
+        }
+        else if (qName.equalsIgnoreCase("sugar")) {
+            ingredientsVector.add(currentIngredient);
+            currentIngredient = new Ingredient();
+        }
+        else if (qName.equalsIgnoreCase("fructose")) {
+            ingredientsVector.add(currentIngredient);
+            currentIngredient = new Ingredient();
+        }
+        else if (qName.equalsIgnoreCase("chocolate")) {
+            ingredientsVector.add(currentIngredient);
+            currentIngredient = new Ingredient();
+        }
+        else if (qName.equalsIgnoreCase("fill")) {
+            ingredientsVector.add(currentIngredient);
+            currentIngredient = new Ingredient();
+        }
+        else if (qName.equalsIgnoreCase("vanillin")) {
+            ingredientsVector.add(currentIngredient);
+            currentIngredient = new Ingredient();
         }
 
-        if(qName.equals("Candy")){          // if closing </Candy> element is encountered
+        else if (qName.equals("Candy")) {          // if closing </Candy> element is encountered
             Recipe recipe = null;
-            switch (currentCandy.Type){
+            switch (currentRecipe) {
                 case "Caramel":
                     recipe = new CaramelRecipe();
                     break;
@@ -116,14 +168,13 @@ public class SAXHandler extends DefaultHandler {
                     break;
 
             }
-            recipe.updateIngredients(ingredientsVector);
-            currentCandy.recipe = recipe;
-            currentCandy.Value = currentValue;
+            if (recipe != null) {
+                recipe.updateIngredients(ingredientsVector);
+                currentCandy.recipe = recipe;
+                currentCandy.Value = currentValue;
 
-            // add new candy to candy list
-            this.candies.add(currentCandy);
-
-            reset(); //reset all candy properties to initial values
+                this.candies.add(currentCandy);
+            }
         }
 
     }
@@ -133,44 +184,57 @@ public class SAXHandler extends DefaultHandler {
         if (id) {
             currentCandy.ID = Integer.parseInt(new String(ch, start, length));
             id = false;
-        }
-        else if (type) {
+        } else if (type) {
             currentCandy.Type = new String(ch, start, length);
             type = false;
-        }
-        else if (name) {
+        } else if (name) {
             currentCandy.Name = new String(ch, start, length);
             name = false;
-        }
-        else if (energy) {
+        } else if (energy) {
             currentCandy.Energy = Integer.parseInt(new String(ch, start, length));
             energy = false;
         }
-        else if (ingredName) {
-            currentIngredient.name = new String(ch, start, length);
-            ingredName = false;
-        }
-        else if (ingredQuantity) {
+
+        else if (water) {
+            currentIngredient.name = "water";
             currentIngredient.quantity = Integer.parseInt(new String(ch, start, length));
-            ingredQuantity = false;
+            water = false;
+        } else if (sugar) {
+            currentIngredient.name = "sugar";
+            currentIngredient.quantity = Integer.parseInt(new String(ch, start, length));
+            sugar = false;
+        }else if (fructose) {
+            currentIngredient.name = "fructose";
+            currentIngredient.quantity = Integer.parseInt(new String(ch, start, length));
+            fructose = false;
+        }else if (chocolate) {
+            currentIngredient.name = "chocolate";
+            currentIngredient.quantity = Integer.parseInt(new String(ch, start, length));
+            chocolate = false;
+        }else if (fill) {
+            currentIngredient.name = "fill";
+            currentIngredient.quantity = Integer.parseInt(new String(ch, start, length));
+            fill = false;
+        }else if (vanillin) {
+            currentIngredient.name = "vanillin";
+            currentIngredient.quantity = Integer.parseInt(new String(ch, start, length));
+            vanillin = false;
         }
+
         else if (protein) {
-            currentValue.protein = Integer.parseInt(new String(ch, start, length));
+            currentValue.Protein = Integer.parseInt(new String(ch, start, length));
             protein = false;
-        }
-        else if (fat) {
-            currentValue.fat = Integer.parseInt(new String(ch, start, length));
+        } else if (fat) {
+            currentValue.Fat = Integer.parseInt(new String(ch, start, length));
             fat = false;
-        }
-        else if (carbohydrate) {
-            currentValue.carbohydrate = Integer.parseInt(new String(ch, start, length));
+        } else if (carbohydrate) {
+            currentValue.Carbohydrate = Integer.parseInt(new String(ch, start, length));
             carbohydrate = false;
         }
+
         else if (production) {
             currentCandy.Production = new String(ch, start, length);
             production = false;
         }
-
-
     }
 }
