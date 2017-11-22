@@ -8,9 +8,9 @@
 
         <Recipe>
             <ChocolateCandy>
-                <water>100</water>
+                <water>10</water>
                 <sugar>50</sugar>
-                <chocolate chocoType="Black">150</chocolate>
+                <chocolate chocoType="Black">30</chocolate>
             </ChocolateCandy>
         </Recipe>
         <Value>
@@ -28,8 +28,8 @@
         <Energy>40</Energy>
         <Recipe>
             <IrisCandy>
-                <water>130</water>
-                <fructose>70</fructose>
+                <water>30</water>
+                <fructose>37</fructose>
                 <vanillin>20</vanillin>
             </IrisCandy>
         </Recipe>
@@ -48,8 +48,8 @@
         <Energy>300</Energy>
         <Recipe>
             <CaramelCandy>
-                <water>150</water>
-                <sugar>100</sugar>
+                <water>45</water>
+                <sugar>44</sugar>
                 <vanillin>35</vanillin>
             </CaramelCandy>
         </Recipe>
@@ -68,10 +68,10 @@
         <Energy>500</Energy>
         <Recipe>
             <ChocoFillCandy>
-                <water>100</water>
-                <sugar>50</sugar>
-                <chocolate chocoType="Milk">150</chocolate>
-                <fill fillType="Nuts">50</fill>
+                <water>50</water>
+                <sugar>10</sugar>
+                <chocolate chocoType="Milk">12</chocolate>
+                <fill fillType="Nuts">30</fill>
             </ChocoFillCandy>
         </Recipe>
         <Value>

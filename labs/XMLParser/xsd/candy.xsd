@@ -15,7 +15,7 @@
             <xs:element name="ID" type="idType"/>
             <xs:element name="Type" type="typeType"/>
             <xs:element name="Name" type="xs:string"/>
-            <xs:element name="Energy" type="xs:int"/>
+            <xs:element name="Energy" type="energyValues"/>
 
             <xs:element name="Recipe" type="recipeType"/>
             <xs:element name="Value" type="valueType"/>
@@ -36,6 +36,19 @@
             <xs:enumeration value="ChocoFill" />
         </xs:restriction>
     </xs:simpleType>
+
+    <xs:simpleType name="ingredientQuantity">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="energyValues">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
     
     <xs:complexType name="recipeType">
         <xs:choice>
@@ -50,26 +63,26 @@
 
     <xs:complexType name="CaramelType">
         <xs:sequence>
-            <xs:element name="water" type="xs:int"/>
-            <xs:element name="sugar" type="xs:int"/>
-            <xs:element name="vanillin" type="xs:int"/>
+            <xs:element name="water" type="ingredientQuantity"/>
+            <xs:element name="sugar" type="ingredientQuantity"/>
+            <xs:element name="vanillin" type="ingredientQuantity"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="IrisType">
         <xs:sequence>
-            <xs:element name="water" type="xs:int"/>
-            <xs:element name="fructose" type="xs:int"/>
-            <xs:element name="vanillin" type="xs:int"/>
+            <xs:element name="water" type="ingredientQuantity"/>
+            <xs:element name="fructose" type="ingredientQuantity"/>
+            <xs:element name="vanillin" type="ingredientQuantity"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="ChocolateType">
         <xs:sequence>
-            <xs:element name="water" type="xs:int"/>
-            <xs:element name="sugar" type="xs:int"/>
+            <xs:element name="water" type="ingredientQuantity"/>
+            <xs:element name="sugar" type="ingredientQuantity"/>
             <xs:element name="chocolate">
                 <xs:complexType>
                     <xs:simpleContent>
-                        <xs:extension base="xs:int">
+                        <xs:extension base="ingredientQuantity">
                             <xs:attribute name="chocoType" type="xs:string"/>
                         </xs:extension>
                     </xs:simpleContent>
@@ -79,12 +92,12 @@
     </xs:complexType>
     <xs:complexType name="ChocoFillType">
         <xs:sequence>
-            <xs:element name="water" type="xs:int"/>
-            <xs:element name="sugar" type="xs:int"/>
+            <xs:element name="water" type="ingredientQuantity"/>
+            <xs:element name="sugar" type="ingredientQuantity"/>
             <xs:element name="chocolate">
                 <xs:complexType>
                     <xs:simpleContent>
-                        <xs:extension base="xs:int">
+                        <xs:extension base="ingredientQuantity">
                             <xs:attribute name="chocoType" type="xs:string"/>
                         </xs:extension>
                     </xs:simpleContent>
@@ -93,7 +106,7 @@
             <xs:element name="fill">
                 <xs:complexType>
                     <xs:simpleContent>
-                        <xs:extension base="xs:int">
+                        <xs:extension base="ingredientQuantity">
                             <xs:attribute name="fillType" type="xs:string"/>
                         </xs:extension>
                     </xs:simpleContent>
