@@ -1,8 +1,8 @@
 package xmlWork;
 
 import candy.Candy;
+import candy.Ingredient;
 import candy.NutrValue;
-import candy.recipes.*;
 
 import javax.xml.namespace.QName;
 import javax.xml.stream.XMLEventReader;
@@ -47,69 +47,69 @@ class STAXParser {
                         break;
                     case "Name":
                         event = reader.nextEvent();
-                        candy.Name = event.asCharacters().getData();
+                        candy.setName(event.asCharacters().getData());
                         break;
                     case "Type":
                         event = reader.nextEvent();
-                        candy.Type = event.asCharacters().getData();
+                        candy.setType(event.asCharacters().getData());
                         break;
                     case "ID":
                         event = reader.nextEvent();
-                        candy.ID = Integer.parseInt(event.asCharacters().getData());
+                        candy.setID(Integer.parseInt(event.asCharacters().getData()));
                         break;
                     case "Energy":
                         event = reader.nextEvent();
-                        candy.Energy = Integer.parseInt(event.asCharacters().getData());
+                        candy.setEnergy(Integer.parseInt(event.asCharacters().getData()));
                         break;
                     case "water":
                         event = reader.nextEvent();
-                        ingredient.name = "water";
-                        ingredient.quantity = Integer.parseInt(event.asCharacters().getData());
+                        ingredient.setName("water");
+                        ingredient.setQuantity(Integer.parseInt(event.asCharacters().getData()));
                         break;
                     case "sugar":
                         event = reader.nextEvent();
-                        ingredient.name = "sugar";
-                        ingredient.quantity = Integer.parseInt(event.asCharacters().getData());
+                        ingredient.setName("sugar");
+                        ingredient.setQuantity(Integer.parseInt(event.asCharacters().getData()));
                         break;
                     case "fructose":
                         event = reader.nextEvent();
-                        ingredient.name = "fructose";
-                        ingredient.quantity = Integer.parseInt(event.asCharacters().getData());
+                        ingredient.setName("fructose");
+                        ingredient.setQuantity(Integer.parseInt(event.asCharacters().getData()));
                         break;
                     case "chocolate":
                         event = reader.nextEvent();
-                        ingredient.name = "chocolate";
-                        ingredient.quantity = Integer.parseInt(event.asCharacters().getData());
+                        ingredient.setName("chocolate");
+                        ingredient.setQuantity(Integer.parseInt(event.asCharacters().getData()));
                         Attribute choco = startElement.getAttributeByName(QName.valueOf("chocoType"));
-                        if (choco != null) ingredient.chocoType = choco.getValue();
+                        if (choco != null) ingredient.setChocoType(choco.getValue());
                         break;
                     case "fill":
                         event = reader.nextEvent();
-                        ingredient.name = "fill";
-                        ingredient.quantity = Integer.parseInt(event.asCharacters().getData());
+                        ingredient.setName("water");
+                        ingredient.setQuantity(Integer.parseInt(event.asCharacters().getData()));
                         Attribute fill = startElement.getAttributeByName(QName.valueOf("fillType"));
-                        if (fill != null) ingredient.fillType = fill.getValue();
+                        if (fill != null) ingredient.setFillType(fill.getValue());
                         break;
                     case "vanillin":
                         event = reader.nextEvent();
-                        ingredient.name = "vanillin";
-                        ingredient.quantity = Integer.parseInt(event.asCharacters().getData());
+                        ingredient.setName("water");
+                        ingredient.setQuantity(Integer.parseInt(event.asCharacters().getData()));
                         break;
                     case "Protein":
                         event = reader.nextEvent();
-                        value.Protein = Integer.parseInt(event.asCharacters().getData());
+                        value.setProtein(Integer.parseInt(event.asCharacters().getData()));
                         break;
                     case "Fat":
                         event = reader.nextEvent();
-                        value.Fat = Integer.parseInt(event.asCharacters().getData());
+                        value.setFat(Integer.parseInt(event.asCharacters().getData()));
                         break;
                     case "Carbohydrate":
                         event = reader.nextEvent();
-                        value.Carbohydrate = Integer.parseInt(event.asCharacters().getData());
+                        value.setCarbohydrate(Integer.parseInt(event.asCharacters().getData()));
                         break;
                     case "Production":
                         event = reader.nextEvent();
-                        candy.Production = event.asCharacters().getData();
+                        candy.setProduction(event.asCharacters().getData());
                         break;
                 }
             }
@@ -147,28 +147,9 @@ class STAXParser {
                 }
 
                 else if (endElement.getName().getLocalPart().equals("Candy")) {
-                    Recipe recipe = null;
-                    switch (candy.Type) {
-                        case "Caramel":
-                            recipe = new CaramelRecipe();
-                            break;
-                        case "Chocolate":
-                            recipe = new ChocoRecipe();
-                            break;
-                        case "ChocoFill":
-                            recipe = new ChocoFillRecipe();
-                            break;
-                        case "Iris":
-                            recipe = new IrisRecipe();
-                            break;
-                    }
-
-                    if (recipe != null) {
-                        recipe.updateIngredients(ingredients);
-                        candy.recipe = recipe;
-                        candy.Value = value;
-                        candies.add(candy);
-                    }
+                    candy.setRecipe(ingredients);
+                    candy.setValue(value);
+                    candies.add(candy);
 
                     ingredients.clear();
                 }

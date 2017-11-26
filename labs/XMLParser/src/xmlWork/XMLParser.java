@@ -41,11 +41,6 @@ public class XMLParser {
         Comparator<Candy> comparator = new Sorter();
         candies.sort(comparator);
 
-        for(Candy item : candies){
-            item.show();
-            System.out.println("\n");
-        }
-
         XStream xstream = new XStream();
         xstream.alias("Candy", Candy.class);
         xstream.alias("Candies", CandyList.class);

@@ -12,11 +12,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Candy.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/candy/Candy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="9" column="37" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="37" />
+              <folding>
+                <element signature="method#getID#0;class#Candy#0" expanded="false" />
+                <element signature="method#setID#0;class#Candy#0" expanded="false" />
+                <element signature="method#getType#0;class#Candy#0" expanded="false" />
+                <element signature="method#setEnergy#0;class#Candy#0" expanded="false" />
+                <element signature="method#checkIngredients#0;class#Candy#0" expanded="false" />
+                <element signature="method#Candy#0;class#Candy#0" expanded="false" />
+                <element signature="method#Candy#1;class#Candy#0" expanded="false" />
+                <element signature="method#compareTo#0;class#Candy#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="candy.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xml/candy.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="73" column="40" lean-forward="false" selection-start-line="73" selection-start-column="40" selection-end-line="73" selection-end-column="40" />
+            <state relative-caret-position="372">
+              <caret line="79" column="27" lean-forward="false" selection-start-line="79" selection-start-column="27" selection-end-line="79" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -25,30 +44,10 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="21" column="33" lean-forward="false" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NutrValue.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/candy/NutrValue.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SAXHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/xmlWork/SAXHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="737">
-              <caret line="227" column="38" lean-forward="false" selection-start-line="227" selection-start-column="38" selection-end-line="227" selection-end-column="38" />
+            <state relative-caret-position="360">
+              <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
               <folding>
-                <element signature="method#reset#0;class#SAXHandler#0" expanded="false" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -57,66 +56,49 @@
       <file leaf-file-name="candy.xsd" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xsd/candy.xsd">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="16" column="43" lean-forward="false" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+            <state relative-caret-position="80">
+              <caret line="4" column="14" lean-forward="false" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
               <folding>
                 <element signature="n#xs:element#0;n#xs:schema#0;n#!!top" expanded="false" />
                 <element signature="n#xs:simpleType#0;n#xs:schema#0;n#!!top" expanded="false" />
                 <element signature="n#xs:simpleType#1;n#xs:schema#0;n#!!top" expanded="false" />
                 <element signature="n#xs:complexType#1;n#xs:schema#0;n#!!top" expanded="false" />
                 <element signature="n#xs:complexType#5;n#xs:schema#0;n#!!top" expanded="false" />
-                <element signature="n#xs:complexType#6;n#xs:schema#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ToHTML.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ToHTML.java">
+      <file leaf-file-name="DOMBuilder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/xmlWork/DOMBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="21" column="1" lean-forward="false" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+            <state relative-caret-position="339">
+              <caret line="59" column="27" lean-forward="false" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IrisRecipe.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/candy/recipes/IrisRecipe.java">
+      <file leaf-file-name="XMLParser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/xmlWork/XMLParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="20">
+              <caret line="26" column="9" lean-forward="true" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CaramelRecipe.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/candy/recipes/CaramelRecipe.java">
+      <file leaf-file-name="SAXHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/xmlWork/SAXHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Ingredient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/candy/recipes/Ingredient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChocoRecipe.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/candy/recipes/ChocoRecipe.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="29" column="23" lean-forward="false" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
-              <folding />
+            <state relative-caret-position="183">
+              <caret line="168" column="0" lean-forward="false" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
+              <folding>
+                <element signature="method#reset#0;class#SAXHandler#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -142,6 +124,7 @@
       <find>ingredien</find>
       <find>prot</find>
       <find>ingedientQuantity</find>
+      <find>Recipe</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -165,7 +148,6 @@
         <option value="$PROJECT_DIR$/xsd/candies.xsd" />
         <option value="$PROJECT_DIR$/src/xmlWork/XMLHandler.java" />
         <option value="$PROJECT_DIR$/src/Sorter.java" />
-        <option value="$PROJECT_DIR$/src/xmlWork/Sorter.java" />
         <option value="$PROJECT_DIR$/src/xmlWork/STAXHandler.java" />
         <option value="$PROJECT_DIR$/src/candy/IngredientsFactory.java" />
         <option value="$PROJECT_DIR$/src/candy/RecipeFactory.java" />
@@ -173,29 +155,30 @@
         <option value="$PROJECT_DIR$/src/candy/CaramelRecipe.java" />
         <option value="$PROJECT_DIR$/src/candy/IrisRecipe.java" />
         <option value="$PROJECT_DIR$/src/candy/Chocolate.java" />
-        <option value="$PROJECT_DIR$/src/candy/Ingredient.java" />
         <option value="$PROJECT_DIR$/src/candy/ChocoRecipe.java" />
         <option value="$PROJECT_DIR$/src/candy/ChocoFillRecipe.java" />
         <option value="$PROJECT_DIR$/candies.html" />
         <option value="$PROJECT_DIR$/src/xmlWork/XMLValidator.java" />
-        <option value="$PROJECT_DIR$/src/candy/recipes/Ingredient.java" />
-        <option value="$PROJECT_DIR$/src/candy/recipes/Recipe.java" />
-        <option value="$PROJECT_DIR$/src/candy/Candy.java" />
         <option value="$PROJECT_DIR$/src/ToHTML.java" />
+        <option value="$PROJECT_DIR$/xsl/candies.xsl" />
+        <option value="$PROJECT_DIR$/src/candy/CandyList.java" />
+        <option value="$PROJECT_DIR$/src/xmlWork/Sorter.java" />
+        <option value="$PROJECT_DIR$/src/candy/recipes/Ingredient.java" />
         <option value="$PROJECT_DIR$/src/candy/recipes/CaramelRecipe.java" />
         <option value="$PROJECT_DIR$/src/candy/recipes/ChocoFillRecipe.java" />
         <option value="$PROJECT_DIR$/src/candy/recipes/ChocoRecipe.java" />
         <option value="$PROJECT_DIR$/src/candy/recipes/IrisRecipe.java" />
-        <option value="$PROJECT_DIR$/src/xmlWork/DOMBuilder.java" />
-        <option value="$PROJECT_DIR$/xsl/candies.xsl" />
-        <option value="$PROJECT_DIR$/src/candy/CandyList.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/xmlWork/XMLParser.java" />
+        <option value="$PROJECT_DIR$/src/candy/recipes/Recipe.java" />
+        <option value="$PROJECT_DIR$/src/candy/Ingredient.java" />
         <option value="$PROJECT_DIR$/src/candy/NutrValue.java" />
         <option value="$PROJECT_DIR$/src/xmlWork/SAXHandler.java" />
+        <option value="$PROJECT_DIR$/src/xmlWork/XMLParser.java" />
         <option value="$PROJECT_DIR$/src/xmlWork/STAXParser.java" />
+        <option value="$PROJECT_DIR$/src/xmlWork/DOMBuilder.java" />
+        <option value="$PROJECT_DIR$/src/candy/Candy.java" />
         <option value="$PROJECT_DIR$/xml/candy.xml" />
         <option value="$PROJECT_DIR$/xsd/candy.xsd" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
   </component>
@@ -250,8 +233,7 @@
               <item name="XMLParser" type="b2602c69:ProjectViewProjectNode" />
               <item name="XMLParser" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="candy" type="462c0819:PsiDirectoryNode" />
-              <item name="recipes" type="462c0819:PsiDirectoryNode" />
+              <item name="xmlWork" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="XMLParser" type="b2602c69:ProjectViewProjectNode" />
@@ -446,12 +428,15 @@
       <workItem from="1511043222832" duration="3674000" />
       <workItem from="1511073154297" duration="3404000" />
       <workItem from="1511346359102" duration="711000" />
-      <workItem from="1511350496146" duration="222000" />
+      <workItem from="1511350496146" duration="2762000" />
+      <workItem from="1511515441012" duration="3049000" />
+      <workItem from="1511557936940" duration="2395000" />
+      <workItem from="1511643184147" duration="2805000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69987000" />
+    <option name="totallyTimeSpent" value="80776000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -459,25 +444,25 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21030043" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23175965" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.56590086" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.56590086" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -497,7 +482,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="19" />
+      <option name="time" value="27" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -509,14 +494,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/candy/recipes/Recipe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="38" lean-forward="true" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/candy/recipes/Recipe.java" />
     <entry file="file://$PROJECT_DIR$/xsd/candy.xsd">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -527,7 +505,6 @@
             <element signature="n#xs:simpleType#1;n#xs:schema#0;n#!!top" expanded="false" />
             <element signature="n#xs:complexType#1;n#xs:schema#0;n#!!top" expanded="false" />
             <element signature="n#xs:complexType#5;n#xs:schema#0;n#!!top" expanded="false" />
-            <element signature="n#xs:complexType#6;n#xs:schema#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -558,7 +535,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#Value#0;n#Candy#0;n#Candies#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -567,6 +546,12 @@
         <state relative-caret-position="200">
           <caret line="10" column="11" lean-forward="false" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
           <folding>
+            <element signature="method#getID#0;class#Candy#0" expanded="false" />
+            <element signature="method#setID#0;class#Candy#0" expanded="false" />
+            <element signature="method#getType#0;class#Candy#0" expanded="false" />
+            <element signature="method#setEnergy#0;class#Candy#0" expanded="false" />
+            <element signature="method#checkIngredients#0;class#Candy#0" expanded="false" />
+            <element signature="method#Candy#0;class#Candy#0" expanded="false" />
             <element signature="method#Candy#1;class#Candy#0" expanded="false" />
             <element signature="method#compareTo#0;class#Candy#0" expanded="false" />
           </folding>
@@ -580,19 +565,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/candy/recipes/Recipe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="11" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/candy/recipes/Recipe.java" />
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -614,7 +594,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-          <folding />
+          <folding>
+            <element signature="n#Value#0;n#Candy#0;n#Candies#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -628,7 +610,6 @@
             <element signature="n#xs:simpleType#1;n#xs:schema#0;n#!!top" expanded="false" />
             <element signature="n#xs:complexType#1;n#xs:schema#0;n#!!top" expanded="false" />
             <element signature="n#xs:complexType#5;n#xs:schema#0;n#!!top" expanded="false" />
-            <element signature="n#xs:complexType#6;n#xs:schema#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -644,7 +625,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-          <folding />
+          <folding>
+            <element signature="n#Value#0;n#Candy#0;n#Candies#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -658,7 +641,6 @@
             <element signature="n#xs:simpleType#1;n#xs:schema#0;n#!!top" expanded="false" />
             <element signature="n#xs:complexType#1;n#xs:schema#0;n#!!top" expanded="false" />
             <element signature="n#xs:complexType#5;n#xs:schema#0;n#!!top" expanded="false" />
-            <element signature="n#xs:complexType#6;n#xs:schema#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -668,6 +650,12 @@
         <state relative-caret-position="160">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
+            <element signature="method#getID#0;class#Candy#0" expanded="false" />
+            <element signature="method#setID#0;class#Candy#0" expanded="false" />
+            <element signature="method#getType#0;class#Candy#0" expanded="false" />
+            <element signature="method#setEnergy#0;class#Candy#0" expanded="false" />
+            <element signature="method#checkIngredients#0;class#Candy#0" expanded="false" />
+            <element signature="method#Candy#0;class#Candy#0" expanded="false" />
             <element signature="method#Candy#1;class#Candy#0" expanded="false" />
             <element signature="method#compareTo#0;class#Candy#0" expanded="false" />
           </folding>
@@ -678,7 +666,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="16" column="12" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-          <folding />
+          <folding>
+            <element signature="n#Value#0;n#Candy#0;n#Candies#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -692,7 +682,6 @@
             <element signature="n#xs:simpleType#1;n#xs:schema#0;n#!!top" expanded="false" />
             <element signature="n#xs:complexType#1;n#xs:schema#0;n#!!top" expanded="false" />
             <element signature="n#xs:complexType#5;n#xs:schema#0;n#!!top" expanded="false" />
-            <element signature="n#xs:complexType#6;n#xs:schema#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -702,6 +691,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="method#getID#0;class#Candy#0" expanded="false" />
+            <element signature="method#setID#0;class#Candy#0" expanded="false" />
+            <element signature="method#getType#0;class#Candy#0" expanded="false" />
+            <element signature="method#setEnergy#0;class#Candy#0" expanded="false" />
+            <element signature="method#checkIngredients#0;class#Candy#0" expanded="false" />
+            <element signature="method#Candy#0;class#Candy#0" expanded="false" />
             <element signature="method#Candy#1;class#Candy#0" expanded="false" />
             <element signature="method#compareTo#0;class#Candy#0" expanded="false" />
           </folding>
@@ -716,13 +711,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/xsd/candies.xsd" />
-    <entry file="file://$PROJECT_DIR$/src/xmlWork/Sorter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../../SPOS/labs/Lab2/Lab2.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -737,32 +725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5820">
           <caret line="327" column="0" lean-forward="false" selection-start-line="327" selection-start-column="0" selection-end-line="327" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xmlWork/XMLValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/candy/recipes/ChocoFillRecipe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="34" column="26" lean-forward="false" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/candy/Candy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding>
-            <element signature="method#Candy#1;class#Candy#0" expanded="false" />
-            <element signature="method#compareTo#0;class#Candy#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -781,86 +743,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/candy/CandyList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="e#138#139#0" expanded="false" />
-            <element signature="e#168#169#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xmlWork/XMLParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xmlWork/DOMBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1540">
-          <caret line="85" column="60" lean-forward="false" selection-start-line="85" selection-start-column="60" selection-end-line="85" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xmlWork/STAXParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1540">
-          <caret line="95" column="31" lean-forward="false" selection-start-line="95" selection-start-column="31" selection-end-line="95" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/out/production/XMLParser/candy/recipes/Recipe.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/candy/recipes/Recipe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/candy/recipes/ChocoRecipe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="29" column="23" lean-forward="false" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/candy/recipes/Ingredient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/candy/recipes/IrisRecipe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/candy/recipes/CaramelRecipe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -872,52 +758,142 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/xmlWork/Sorter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="41" lean-forward="false" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/candy/recipes/CaramelRecipe.java" />
+    <entry file="file://$PROJECT_DIR$/src/candy/recipes/ChocoFillRecipe.java" />
+    <entry file="file://$PROJECT_DIR$/src/candy/recipes/IrisRecipe.java" />
+    <entry file="file://$PROJECT_DIR$/src/candy/recipes/ChocoRecipe.java" />
+    <entry file="file://$PROJECT_DIR$/src/candy/recipes/Recipe.java" />
+    <entry file="file://$PROJECT_DIR$/src/candy/CandyList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/candy/NutrValue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        <state relative-caret-position="760">
+          <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+          <folding>
+            <element signature="e#158#159#0" expanded="true" />
+            <element signature="e#188#189#0" expanded="true" />
+            <element signature="e#349#350#0" expanded="true" />
+            <element signature="e#375#376#0" expanded="true" />
+            <element signature="e#521#522#0" expanded="true" />
+            <element signature="e#556#557#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/candy/Ingredient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding>
+            <element signature="method#setQuantity#0;class#Ingredient#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xmlWork/XMLValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xmlWork/STAXParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2420">
+          <caret line="139" column="48" lean-forward="true" selection-start-line="139" selection-start-column="48" selection-end-line="139" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/xmlWork/SAXHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="737">
-          <caret line="227" column="38" lean-forward="false" selection-start-line="227" selection-start-column="38" selection-end-line="227" selection-end-column="38" />
+        <state relative-caret-position="183">
+          <caret line="168" column="0" lean-forward="false" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
           <folding>
             <element signature="method#reset#0;class#SAXHandler#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/xmlWork/DOMBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="59" column="27" lean-forward="false" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/xml/candy.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="73" column="40" lean-forward="false" selection-start-line="73" selection-start-column="40" selection-end-line="73" selection-end-column="40" />
+        <state relative-caret-position="372">
+          <caret line="79" column="27" lean-forward="false" selection-start-line="79" selection-start-column="27" selection-end-line="79" selection-end-column="27" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/candy/Candy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="37" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="37" />
+          <folding>
+            <element signature="method#getID#0;class#Candy#0" expanded="false" />
+            <element signature="method#setID#0;class#Candy#0" expanded="false" />
+            <element signature="method#getType#0;class#Candy#0" expanded="false" />
+            <element signature="method#setEnergy#0;class#Candy#0" expanded="false" />
+            <element signature="method#checkIngredients#0;class#Candy#0" expanded="false" />
+            <element signature="method#Candy#0;class#Candy#0" expanded="false" />
+            <element signature="method#Candy#1;class#Candy#0" expanded="false" />
+            <element signature="method#compareTo#0;class#Candy#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/xsd/candy.xsd">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="16" column="43" lean-forward="false" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+        <state relative-caret-position="80">
+          <caret line="4" column="14" lean-forward="false" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
           <folding>
             <element signature="n#xs:element#0;n#xs:schema#0;n#!!top" expanded="false" />
             <element signature="n#xs:simpleType#0;n#xs:schema#0;n#!!top" expanded="false" />
             <element signature="n#xs:simpleType#1;n#xs:schema#0;n#!!top" expanded="false" />
             <element signature="n#xs:complexType#1;n#xs:schema#0;n#!!top" expanded="false" />
             <element signature="n#xs:complexType#5;n#xs:schema#0;n#!!top" expanded="false" />
-            <element signature="n#xs:complexType#6;n#xs:schema#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xmlWork/XMLParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="26" column="9" lean-forward="true" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="21" column="33" lean-forward="false" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="360">
+          <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,8 +1,8 @@
 package xmlWork;
 
 import candy.Candy;
+import candy.Ingredient;
 import candy.NutrValue;
-import candy.recipes.*;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -23,26 +23,21 @@ class DOMBuilder {
 
             Element candyElem = (Element) candyNodes.item(i);
 
-            candy.ID = new Integer(childValue(candyElem, "ID"));
-            candy.Name = childValue(candyElem, "Name");
-            candy.Type = childValue(candyElem, "Type");
-            candy.Energy = new Integer(childValue(candyElem, "Energy"));
+            candy.setID(new Integer(childValue(candyElem, "ID")));
+            candy.setName(childValue(candyElem, "Name"));
+            candy.setType(childValue(candyElem, "Type"));
+            candy.setEnergy(new Integer(childValue(candyElem, "Energy")));
 
             Node recipeNode = child(candyElem, "ChocolateCandy");
-            Recipe recipe = new ChocoRecipe();
-
-            switch (candy.Type) {
+            switch (candy.getType()) {
                 case "Iris":
                     recipeNode = child(candyElem, "IrisCandy");
-                    recipe = new IrisRecipe();
                     break;
                 case "Caramel":
                     recipeNode = child(candyElem, "CaramelCandy");
-                    recipe = new CaramelRecipe();
                     break;
                 case "ChocoFill":
                     recipeNode = child(candyElem, "ChocoFillCandy");
-                    recipe = new ChocoFillRecipe();
             }
 
             Vector<Ingredient> ingredients = new Vector<>();
@@ -53,25 +48,23 @@ class DOMBuilder {
                     Element ingrElem = (Element) ingredientsNodes.item(ingr);
                     Ingredient currIngredient = new Ingredient();
 
-                    currIngredient.name = ingrElem.getTagName();
-                    currIngredient.quantity = new Integer(ingrElem.getTextContent());
+                    currIngredient.setName(ingrElem.getTagName());
+                    currIngredient.setQuantity(new Integer(ingrElem.getTextContent()));
 
-                    currIngredient.chocoType = ingrElem.getAttribute("chocoType");
-                    currIngredient.fillType = ingrElem.getAttribute("fillType");
+                    currIngredient.setChocoType(ingrElem.getAttribute("chocoType"));
+                    currIngredient.setFillType(ingrElem.getAttribute("fillType"));
 
                     ingredients.add(currIngredient);
                 }
             }
-
-            recipe.updateIngredients(ingredients);
-            candy.recipe = recipe;
+            candy.setRecipe(ingredients);
 
             int prot = new Integer(childValue(candyElem, "Protein"));
             int fat = new Integer(childValue(candyElem, "Fat"));
             int carb = new Integer(childValue(candyElem, "Carbohydrate"));
 
-            candy.Value = new NutrValue(prot, fat, carb);
-            candy.Production = childValue(candyElem, "Production");
+            candy.setValue(new NutrValue(prot, fat, carb));
+            candy.setProduction(childValue(candyElem, "Production"));
 
             candies.add(candy);
         }

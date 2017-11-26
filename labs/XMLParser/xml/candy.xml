@@ -14,9 +14,9 @@
             </ChocolateCandy>
         </Recipe>
         <Value>
-            <Protein>58</Protein>
-            <Fat>95</Fat>
-            <Carbohydrate>145</Carbohydrate>
+            <Protein>9</Protein>
+            <Fat>5</Fat>
+            <Carbohydrate>3</Carbohydrate>
         </Value>
         <Production>Roshen</Production>
     </Candy>
@@ -34,9 +34,9 @@
             </IrisCandy>
         </Recipe>
         <Value>
-            <Protein>40</Protein>
-            <Fat>70</Fat>
-            <Carbohydrate>123</Carbohydrate>
+            <Protein>8</Protein>
+            <Fat>7</Fat>
+            <Carbohydrate>8</Carbohydrate>
         </Value>
         <Production>AVK</Production>
     </Candy>
@@ -56,7 +56,7 @@
         <Value>
             <Protein>4</Protein>
             <Fat>7</Fat>
-            <Carbohydrate>12</Carbohydrate>
+            <Carbohydrate>6</Carbohydrate>
         </Value>
         <Production>Conti</Production>
     </Candy>
@@ -75,9 +75,9 @@
             </ChocoFillCandy>
         </Recipe>
         <Value>
-            <Protein>10</Protein>
-            <Fat>12</Fat>
-            <Carbohydrate>4</Carbohydrate>
+            <Protein>8</Protein>
+            <Fat>2</Fat>
+            <Carbohydrate>9</Carbohydrate>
         </Value>
         <Production>Roshen</Production>
     </Candy>

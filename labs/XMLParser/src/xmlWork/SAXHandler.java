@@ -1,7 +1,7 @@
 package xmlWork;
 
+import candy.Ingredient;
 import candy.NutrValue;
-import candy.recipes.*;
 import candy.Candy;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -103,10 +103,10 @@ public class SAXHandler extends DefaultHandler {
             fructose = true;
         } else if (qName.equalsIgnoreCase("CHOCOLATE")) {
             chocolate = true;
-            currentIngredient.fillType = attributes.getValue("chocoType");
+            currentIngredient.setFillType(attributes.getValue("chocoType"));
         } else if (qName.equalsIgnoreCase("FILL")) {
             fill = true;
-            currentIngredient.fillType = attributes.getValue("fillType");
+            currentIngredient.setFillType(attributes.getValue("fillType"));
         } else if (qName.equalsIgnoreCase("VANILLIN")) {
             vanillin = true;
         }
@@ -147,34 +147,15 @@ public class SAXHandler extends DefaultHandler {
             currentIngredient = new Ingredient();
         }
         else if (qName.equalsIgnoreCase("vanillin")) {
+            //currentIngredient.quantity += 1000;
             ingredientsVector.add(currentIngredient);
             currentIngredient = new Ingredient();
         }
 
         else if (qName.equals("Candy")) {          // if closing </Candy> element is encountered
-            Recipe recipe = null;
-            switch (currentRecipe) {
-                case "Caramel":
-                    recipe = new CaramelRecipe();
-                    break;
-                case "Iris":
-                    recipe = new IrisRecipe();
-                    break;
-                case "Chocolate":
-                    recipe = new ChocoRecipe();
-                    break;
-                case "ChocoFill":
-                    recipe = new ChocoFillRecipe();
-                    break;
-
-            }
-            if (recipe != null) {
-                recipe.updateIngredients(ingredientsVector);
-                currentCandy.recipe = recipe;
-                currentCandy.Value = currentValue;
-
-                this.candies.add(currentCandy);
-            }
+            currentCandy.setRecipe(ingredientsVector);
+            currentCandy.setValue(currentValue);
+            this.candies.add(currentCandy);
         }
 
     }
@@ -182,58 +163,58 @@ public class SAXHandler extends DefaultHandler {
     public void characters(char ch[], int start, int length) throws SAXException {
 
         if (id) {
-            currentCandy.ID = Integer.parseInt(new String(ch, start, length));
+            currentCandy.setID(Integer.parseInt(new String(ch, start, length)));
             id = false;
         } else if (type) {
-            currentCandy.Type = new String(ch, start, length);
+            currentCandy.setType(new String(ch, start, length));
             type = false;
         } else if (name) {
-            currentCandy.Name = new String(ch, start, length);
+            currentCandy.setName(new String(ch, start, length));
             name = false;
         } else if (energy) {
-            currentCandy.Energy = Integer.parseInt(new String(ch, start, length));
+            currentCandy.setEnergy(Integer.parseInt(new String(ch, start, length)));
             energy = false;
         }
 
         else if (water) {
-            currentIngredient.name = "water";
-            currentIngredient.quantity = Integer.parseInt(new String(ch, start, length));
+            currentIngredient.setName("water");
+            currentIngredient.setQuantity(Integer.parseInt(new String(ch, start, length)));
             water = false;
         } else if (sugar) {
-            currentIngredient.name = "sugar";
-            currentIngredient.quantity = Integer.parseInt(new String(ch, start, length));
+            currentIngredient.setName("suagr");
+            currentIngredient.setQuantity(Integer.parseInt(new String(ch, start, length)));
             sugar = false;
         }else if (fructose) {
-            currentIngredient.name = "fructose";
-            currentIngredient.quantity = Integer.parseInt(new String(ch, start, length));
+            currentIngredient.setName("fructose");
+            currentIngredient.setQuantity(Integer.parseInt(new String(ch, start, length)));
             fructose = false;
         }else if (chocolate) {
-            currentIngredient.name = "chocolate";
-            currentIngredient.quantity = Integer.parseInt(new String(ch, start, length));
+            currentIngredient.setName("chocolate");
+            currentIngredient.setQuantity(Integer.parseInt(new String(ch, start, length)));
             chocolate = false;
         }else if (fill) {
-            currentIngredient.name = "fill";
-            currentIngredient.quantity = Integer.parseInt(new String(ch, start, length));
+            currentIngredient.setName("fill");
+            currentIngredient.setQuantity(Integer.parseInt(new String(ch, start, length)));
             fill = false;
         }else if (vanillin) {
-            currentIngredient.name = "vanillin";
-            currentIngredient.quantity = Integer.parseInt(new String(ch, start, length));
+            currentIngredient.setName("vanillin");
+            currentIngredient.setQuantity(Integer.parseInt(new String(ch, start, length)));
             vanillin = false;
         }
 
         else if (protein) {
-            currentValue.Protein = Integer.parseInt(new String(ch, start, length));
+            currentValue.setProtein(Integer.parseInt(new String(ch, start, length)));
             protein = false;
         } else if (fat) {
-            currentValue.Fat = Integer.parseInt(new String(ch, start, length));
+            currentValue.setFat(Integer.parseInt(new String(ch, start, length)));
             fat = false;
         } else if (carbohydrate) {
-            currentValue.Carbohydrate = Integer.parseInt(new String(ch, start, length));
+            currentValue.setCarbohydrate(Integer.parseInt(new String(ch, start, length)));
             carbohydrate = false;
         }
 
         else if (production) {
-            currentCandy.Production = new String(ch, start, length);
+            currentCandy.setProduction(new String(ch, start, length));
             production = false;
         }
     }

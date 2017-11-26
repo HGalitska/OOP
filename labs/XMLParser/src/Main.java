@@ -1,5 +1,3 @@
-import candy.Candy;
-import com.thoughtworks.xstream.XStream;
 import org.xml.sax.SAXException;
 import xmlWork.*;
 
@@ -13,7 +11,7 @@ public class Main {
 
     public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException, TransformerException, XMLStreamException {
         XMLValidator validator = new XMLValidator();
-        boolean valid = validator.validateXML("xsd/candy.xsd", "xml/candy.xml");
+        validator.validateXML("xsd/candy.xsd", "xml/candy.xml");
 
 
         XMLParser parser = new XMLParser();
