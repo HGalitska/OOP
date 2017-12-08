@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Candies>
+    <Candy>
+        <ID>735</ID>
+        <Type>Chocolate</Type>
+        <Name>Chocco Boom</Name>
+        <Energy>200</Energy>
+
+        <Recipe>
+            <ChocolateCandy>
+                <water>10</water>
+                <sugar>50</sugar>
+                <chocolate chocoType="Black">30</chocolate>
+            </ChocolateCandy>
+        </Recipe>
+        <Value>
+            <Protein>9</Protein>
+            <Fat>5</Fat>
+            <Carbohydrate>3</Carbohydrate>
+        </Value>
+        <Production>Roshen</Production>
+    </Candy>
+
+    <Candy>
+        <ID>672</ID>
+        <Type>Iris</Type>
+        <Name>Fantasy</Name>
+        <Energy>40</Energy>
+        <Recipe>
+            <IrisCandy>
+                <water>30</water>
+                <fructose>37</fructose>
+                <vanillin>20</vanillin>
+            </IrisCandy>
+        </Recipe>
+        <Value>
+            <Protein>8</Protein>
+            <Fat>7</Fat>
+            <Carbohydrate>8</Carbohydrate>
+        </Value>
+        <Production>AVK</Production>
+    </Candy>
+
+    <Candy>
+        <ID>784</ID>
+        <Type>Caramel</Type>
+        <Name>Carara</Name>
+        <Energy>300</Energy>
+        <Recipe>
+            <CaramelCandy>
+                <water>45</water>
+                <sugar>44</sugar>
+                <vanillin>35</vanillin>
+            </CaramelCandy>
+        </Recipe>
+        <Value>
+            <Protein>4</Protein>
+            <Fat>7</Fat>
+            <Carbohydrate>6</Carbohydrate>
+        </Value>
+        <Production>Conti</Production>
+    </Candy>
+
+    <Candy>
+        <ID>321</ID>
+        <Type>ChocoFill</Type>
+        <Name>Boost</Name>
+        <Energy>500</Energy>
+        <Recipe>
+            <ChocoFillCandy>
+                <water>50</water>
+                <sugar>10</sugar>
+                <chocolate chocoType="Milk">12</chocolate>
+                <fill fillType="Nuts">30</fill>
+            </ChocoFillCandy>
+        </Recipe>
+        <Value>
+            <Protein>8</Protein>
+            <Fat>2</Fat>
+            <Carbohydrate>9</Carbohydrate>
+        </Value>
+        <Production>Roshen</Production>
+    </Candy>
+</Candies>
